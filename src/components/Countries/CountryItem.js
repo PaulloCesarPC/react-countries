@@ -3,9 +3,8 @@ import React, { Component } from 'react';
 import css from './country-item.module.css';
 import { formatNumber, limitSizeName } from '../../helpers/format-helpers';
 
-export default class CountryItem extends Component {
-  render() {
-    const { country } = this.props;
+export default function CountryItem(props)  {
+    const { country } = props;
     const { name, flag , population } = country;
     
     
@@ -14,6 +13,5 @@ export default class CountryItem extends Component {
         <img className={css.flag} src={flag} alt={name} />
         {limitSizeName(name)} <br></br> Pop:  {formatNumber(population)}
       </div>
-    );
-  }
+    );  
 }
